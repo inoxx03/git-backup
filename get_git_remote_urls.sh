@@ -25,7 +25,7 @@ do
             # print the matched entry
             #echo "[DEBUG]: $(git remote -v | egrep -io ".*[[:space:]](git@git).*(.git)")"
 
-            git remote -v | egrep -io ".*[[:space:]](git@git).*(.git)" >> ${OUTPUT_FILE_NAME} || git remote -v | egrep -io ".*[[:space:]](https://).*(.git)" >> ${OUTPUT_FILE_NAME}
+            git remote -v | egrep -io ".*(.git)" >> ${OUTPUT_FILE_NAME}
 
             echo " " >> ${OUTPUT_FILE_NAME}
 
@@ -33,6 +33,5 @@ do
 
         fi
 done
-
 
 exit 0
